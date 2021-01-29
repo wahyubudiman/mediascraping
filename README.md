@@ -1,6 +1,8 @@
 # warta-scrap
 Indonesia Index News Crawler, including 10 online
+disadur dari https://github.com/harryandriyan/warta-scrap
 
+Direvisi sesuai kebutuhan, dimana saya disini mengambil konten-nya tidak hanya indeks berita
 ### Online Media List:
 - Detik.com
   http://news.detik.com/indeks
@@ -24,8 +26,9 @@ Indonesia Index News Crawler, including 10 online
   https://tirto.id/indeks
 
 ### Installation :
+Syarat Python 2.7 di python versi 3 belum jalan
 Open Terminal, and clone this repo:  
-> git clone https://github.com/harryandriyan/warta-scrap
+> git clone https://github.com/wahyubudiman/mediascraping.git
 
 Go to project folder
 > cd warta-scrap
