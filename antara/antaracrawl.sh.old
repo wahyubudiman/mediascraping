@@ -1,0 +1,12 @@
+#!/bin/bash
+TODAY=$(date +"%Y-%m-%d")
+export SCRAPYHOME=/opt/scrapy/warta-scrap-master
+echo $TODAY
+
+#source /opt/scrapy/bin/activate && cd $SCRAPYHOME/antara/ && scrapy crawl antara -o hslkekeringan$(date +\%Y\%m\%d).json -t json >> $SCRAPYHOME/antara/log_$(date +\%Y\%m\%d).log 2>&1
+
+source /opt/scrapy/bin/activate && cd $SCRAPYHOME/antara/ && scrapy crawl antara -o hslkekeringan_$TODAY.json -t json >> $SCRAPYHOME/antara/log_$TODAY.log 2>&1
+
+echo "upload into hdfs /analytic/sentimentanalysis/webmedia/antara"
+#sudo -u root hdfs dfs -mkdir /analytic/sentimentanalysis/webmedia/antara
+sudo -u root hdfs dfs -put $SCRAPYHOME/antara/hslkekeringan_$TODAY.json /analytic/sentimentanalysis/webmedia/antara/.
